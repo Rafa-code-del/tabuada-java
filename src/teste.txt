@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in =  new Scanner(System.in);
+        int numero = 0;
+
+        System.out.println("Digite um numero");
+        numero = in.nextInt();
+        String resposta = "sim";
+
+        while (resposta.equalsIgnoreCase("Sim")) {
+
+            System.out.println("Você digitou: " + numero);
+            System.out.println("=== Tabuada do " + numero + " ===");
+
+            for (int i = 1; i <= 10; i++) {
+                int multiplicar = numero * i;
+                System.out.println(numero + " x " + i + " = " + multiplicar);
+            }
+            System.out.println("Quer continuar? (sim/não): ");
+            resposta = in.next();
+
+        }
+        in.close();
+        System.out.println("======================");
+        System.out.println("Programa encerrado! 👋");
+    }
+}
+..........................
+
+        import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String resposta = "sim";
+
+        while (resposta.equalsIgnoreCase("sim")){
+            int numero = 0;
+            boolean numeroValido = false;
+
+
+            while (!numeroValido) {
+                try {
+                    System.out.print("Digite um número maior que ZERO: ");
+                    numero = in.nextInt();
+
+                    if (numero > 0) {
+                        numeroValido = true; // válido, sai do loop
+                    } else {
+                        System.out.println("❌ O número precisa ser maior que ZERO.");
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("❌ Entrada inválida! Digite apenas números.");
+                    in.nextLine(); // limpa o buffer para não travar
+                }
+            }
+            System.out.println("Você digitou: " + numero);
+            System.out.println("=== Tabuada do " + numero + " ===");
+            for (int i = 1; i <= 10; i++) {
+
+
+                System.out.println(numero + " x " + i + " = " + (numero * i));
+            }
+            System.out.println("Quer continuar? (sim/não): ");
+            resposta = in.next();
+            System.out.println("======================");
+        }
+        in.close();
+        System.out.println("======================");
+        System.out.println("Programa encerrado! 👋");
+    }
+}*/
